@@ -18,11 +18,18 @@ header{
   overflow:hidden;
 }
 
+.wrapper ul li .active{
+  background:#037E8C;
+  font-weight:bold;
+}
+
+
 header .logo{
   color:#f2f2f2;
   font-size:50px;
   line-height:200px;
   float:left;
+  text-decoration:none;
 }
 
 header nav{
@@ -81,3 +88,37 @@ header nav a:hover{
     line-height:50px;
   }
 }
+
+.paginacion{
+  margin:20px 0;
+}
+
+.paginacion ul{
+  list-style:none;
+  text-align:center;
+}
+
+.paginacion ul li{
+  display:inline-block;
+  margin-right:10px;
+}
+
+.paginacion ul li a{
+  display:block;
+  padding:10px 20px;
+  background:#024959;
+  text-decoration:none;
+}
+
+.paginacion ul li a:hover{
+  background:#037E8C;
+}
+
+.paginacion ul li .active{
+  background:#037E8C;
+  font-weight:bold;
+}
+
+
+
+
