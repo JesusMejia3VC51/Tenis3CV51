@@ -1,6 +1,7 @@
 
 body {
-  background: yellow; 
+  background: black; 
+  color: white;
   max-width: 640px;
   margin: 0 auto;
   padding: 0.5rem;
