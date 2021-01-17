@@ -17,28 +17,31 @@
       src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
     <script src="js/init.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="cmp/header.js"></script>
+ 
     <script type="module" src="cmp/mi-footer.js"></script>
     <script type="module" src="cmp/mi-progreso.js"></script>
     <link rel="stylesheet" href="css/estilos.css"  >
+   <script src="cmp/header.js"></script>
   </head>
   <body> 
     <header>
       <div class="wrapper"> 
-      <div class="logo">SNKRS</div>
+      <div class="logo"><a href="index.html">SKNRS</a></div>
     <nav>
-          <a href="index.html">Inicio</a>
-          <a href="nuevo.html">Lo Nuevo</a>
-          <a href="ropa.html">Streetwear</a>
-          <a href="#about">Conocenos</a>
-          <a href="iniciarSesion.html">Iniciar Sesion</a>
-          <a href="registro.html">Registrarse</a>
-          <a href="#" ng-click="cerrarSesion()">Cerrar Sesion</a>
-        
+      <ul>
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="nuevo.html" class="active">Lo Nuevo</a></li>
+          <li><a href="ropa.html">Streetwear</a></li>
+          <li><a href="#about">Conocenos</a></li>
+          <li><a href="iniciarSesion.html">Iniciar Sesion</a></li>
+          <li><a href="registro.html">Registrarse</a></li>
+          <li><a href="#" ng-click="cerrarSesion()">Cerrar Sesion</a></li>
+         </ul>
       </nav><!-- .nav-menu -->
       </div>
     </header>
     <section class="contenido wrapper">
+      <h1>OFFICIAL STORE OF THE SNEAKER GAME</h1>
       <section class="main"> 
         <article>
      <h2>Air Jordan 4 x Off-White™ para mujer</h2>
@@ -54,6 +57,13 @@
      </p>
       </article>
       </section>
+      <section class="paginacion">
+        <ul>
+         <li><a href="index.html" class="active">1</a></li>  
+         <li><a href="pagina2.html">2</a></li> 
+        </ul>
+       </section>
+
     <aside>
       <h4> Tal vez te interese...</h4>
       <p>
@@ -63,7 +73,6 @@
     </section>
      <section id="cta" class="cta">
       <div class="container">
-
         <div class="text-center">
           <h3>Registrate</h3>
           <p> Comienza ahora y forma parte de nuestra comunidad</p>
