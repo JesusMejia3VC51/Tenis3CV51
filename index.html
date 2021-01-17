@@ -20,12 +20,12 @@
     <script src="js/header.js"></script>
     <script type="module" src="cmp/mi-footer.js"></script>
     <script type="module" src="cmp/mi-progreso.js"></script>
-    <link href="css/estilos.css" rel="stylesheet" >
+    <link rel="stylesheet" href="css/estilos.css"  >
   </head>
   <body> 
-    <header class="">
+    <header>
       <div class="wrapper"> 
-      <div class="logo"><a href="index.html">SNKRS</a></div>
+      <div class="logo">SNKRS</div>
     <nav>
           <a href="index.html">Inicio</a>
           <a href="nuevo.html">Lo Nuevo</a>
@@ -72,34 +72,5 @@
 
       </div>
     </section>
-      <label>
-        Nombre
-        <output id=nombre>
-          <mi-progreso></mi-progreso>
-        </output>
-      </label>
-    </p>
-    <mi-footer></mi-footer>
-    <script type="module">
-      import { Fábrica } from "./js/Fabrica.js";
-      import { muestraError } from "./lib/util.js";
-
-      const ctrlSesión = Fábrica.instancia.ctrlSesión;
-      terminarSesión.addEventListener("click",
-        () => ctrlSesión.terminaSesión());
-
-      protege();
-      async function protege() {
-        try {
-          const usuarioAutorizado = await ctrlSesión.protege("");
-          miNav.protege(usuarioAutorizado.privilegios);
-          email.value = usuarioAutorizado.email;
-          nombre.value = usuarioAutorizado.nombre;
-          avatar.src = usuarioAutorizado.urlFoto;
-        } catch (error) {
-          muestraError(error)
-        }
-      }
-    </script>
   </body>
 </html>
