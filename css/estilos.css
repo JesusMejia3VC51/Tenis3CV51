@@ -20,7 +20,7 @@ header{
   text-decoration:none;
 }
 
-.logo{
+.logo a{
   text-decoration:none;
 }
 header .logo{
@@ -117,3 +117,7 @@ header nav a:hover{
   background:#037E8C;
   font-weight:bold;
 }
+
+
+
+
