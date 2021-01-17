@@ -16,27 +16,27 @@
     <script
       src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
     <script src="js/init.js"></script>
-    <script type="module" src="cmp/mi-nav.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/header.js"></script>
     <script type="module" src="cmp/mi-footer.js"></script>
     <script type="module" src="cmp/mi-progreso.js"></script>
-    <link href="css/estilos.css" rel="stylesheet" >
+    <link rel="stylesheet" href="css/estilos.css"  >
   </head>
   <body> 
-    <header id="header">
-      <h1>OFFICIAL STORE OF THE SNEAKER GAME</h1>
-      <div class="container-fluid d-flex align-items-center justify-content-between">
-      <h1 class="logo"><a href="index.html">SNKRS</a></h1>
-    <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="index.html">Inicio</a></li>
-          <li class="active"><a href="nuevo.html">Lo Nuevo</a></li>
-          <li class="active"><a href="index.html">Streetwear</a></li>
-          <li><a href="#about">Conocenos</a></li>
-          <li ng-hide="UsuarioLogueado"><a href="iniciarSesion.html">Iniciar Sesion</a></li>
-          <li ng-hide="UsuarioLogueado"><a href="registro.html">Registrarse</a></li>
-          <li ng-show="UsuarioLogueado"><a href="#" ng-click="cerrarSesion()">Cerrar Sesion</a></li>
-        </ul>
+    <header>
+      <div class="wrapper"> 
+      <div class="logo">SNKRS</div>
+    <nav>
+          <a href="index.html">Inicio</a>
+          <a href="nuevo.html">Lo Nuevo</a>
+          <a href="ropa.html">Streetwear</a>
+          <a href="#about">Conocenos</a>
+          <a href="iniciarSesion.html">Iniciar Sesion</a>
+          <a href="registro.html">Registrarse</a>
+          <a href="#" ng-click="cerrarSesion()">Cerrar Sesion</a>
+        
       </nav><!-- .nav-menu -->
+      </div>
     </header>
     <section class="wrapper">
       <section class="main"> 
@@ -72,35 +72,6 @@
 
       </div>
     </section>
-      <label>
-        Nombre
-        <output id=nombre>
-          <mi-progreso></mi-progreso>
-        </output>
-      </label>
-    </p>
-    <mi-footer></mi-footer>
-    <script type="module">
-      import { Fábrica } from "./js/Fabrica.js";
-      import { muestraError } from "./lib/util.js";
-
-      const ctrlSesión = Fábrica.instancia.ctrlSesión;
-      terminarSesión.addEventListener("click",
-        () => ctrlSesión.terminaSesión());
-
-      protege();
-      async function protege() {
-        try {
-          const usuarioAutorizado = await ctrlSesión.protege("");
-          miNav.protege(usuarioAutorizado.privilegios);
-          email.value = usuarioAutorizado.email;
-          nombre.value = usuarioAutorizado.nombre;
-          avatar.src = usuarioAutorizado.urlFoto;
-        } catch (error) {
-          muestraError(error)
-        }
-      }
-    </script>
   </body>
 </html>
 
