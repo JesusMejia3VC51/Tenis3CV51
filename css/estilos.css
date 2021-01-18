@@ -1,7 +1,7 @@
 *{margin:0; padding:0;}
 
 body {
-  background: url(../imagenes/fondo.jpg); 
+  background: url(.../imagenes/fondo.jpg); 
 }
 
 header{
@@ -116,4 +116,9 @@ header nav a:hover{
 .paginacion ul li .active{
   background:#037E8C;
   font-weight:bold;
+}
+
+.conocenos {
+  position:fixed;
+  height:100px;
 }
