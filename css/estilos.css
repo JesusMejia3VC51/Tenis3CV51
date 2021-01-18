@@ -5,6 +5,7 @@ body {
 }
 
 h1{
+  text-orientation: center;
   background-color: #939597;
   opacity: 0.4;
 }
