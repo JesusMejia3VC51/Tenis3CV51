@@ -39,30 +39,20 @@
       </div>
     </header>
       <section class="contenido wrapper">
-        <form id="form"  action="javascript:procesa()" >
             <h1>Registrate!</h1>
             <p>
-                <label for="Nombre"> Nombre: </label><br>
-      <input type="text" name="Nombre" id="Nombre" required>
-      <output id="salida_nombre"></output>
+              <label for="email" >Correo Electronico: </label><br>
+      <input type="email" placeholder="hola@ejemplo.com" id="txtEmail" required>
             </p>
             <p>
-                <label for="Correo" >Correo Electronico: </label><br>
-      <input type="text" name="Correo" id="Correo" required>
-      <output id="salida_correo"></output>
-      <p>
-                <label for="Contraseña"> Contraseña: </label><br>
-      <input type="text" name="Contraseña" id="Contraseña" required>
-      <output id="salida_contraseña"></output>
+              <label for="password"> Contraseña: </label><br>
+      <input type="password" placeholder="Contraseña" id="txtPassword" required>
             </p>
-            </p>
-            <p><button type="submit" value="Procesar">REGISTRARME</button></p>
-        </form>
+            <p><button id="btnSignUp" class="btn btn-secondary" >REGISTRARME</button></p>
         <h2>No te preocupes, tus datos estan seguros :)</h2>
-
     <mi-footer></mi-footer>
      </section>
-    <script  type="text/javascript" src="js/js.js">
+    <script  type="text/javascript" src="js/init.js">
         </script>
     </body>
 </html>
