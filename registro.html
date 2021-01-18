@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNKRS</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+    <link rel="shortcut icon" type="image/x-icon" href="imagenes/favicon.ico">
+    <script
+      src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
+    <script src="js/init.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+ 
+    <script type="module" src="cmp/mi-footer.js"></script>
+    <script type="module" src="cmp/mi-progreso.js"></script>
+    <link rel="stylesheet" href="css/estilos.css"  >
+   <script src="cmp/header.js"></script>
+  </head>
+    <body>
+       <header>
+      <div class="wrapper"> 
+      <div class="logo"><a href="index.html">SKNRS</a></div>
+    <nav>
+
+          <a href="index.html" class="active">Inicio</a>
+          <a href="nuevo.html" class="active">Lo Nuevo</a>
+          <a href="ropa.html">Streetwear</a>
+          <a href="#about">Conocenos</a>
+          <a href="iniciarSesion.html">Inicia Sesion</a>
+          <a href="registro.html">Registrarse</a>
+      </nav><!-- .nav-menu -->
+      </div>
+    </header>
+        <form id="form"  action="javascript:procesa()" >
+            <h1>Registrate!</h1>
+            <p>
+                <label for="Nombre"> Nombre: </label><br>
+      <input type="text" name="Nombre" id="Nombre" required>
+      <output id="salida_nombre"></output>
+            </p>
+            <p>
+                <label for="Correo" >Correo Electronico: </label><br>
+      <input type="text" name="Correo" id="Correo" required>
+      <output id="salida_correo"></output>
+            </p>
+            <p><button type="submit" value="Procesar">REGISTRARME</button></p>
+        </form>
+        <h2>No te preocupes, tus datos estan seguros :)</h2>
+    <mi-footer></mi-footer>
+    <script  type="text/javascript" src="js/js.js">
+        </script>
+    </body>
+</html>
