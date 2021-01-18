@@ -4,6 +4,11 @@ body {
   background: url(../imagenes/fondo.jpg); 
 }
 
+h1{
+  background-color: green;
+  opacity: 0.1;
+}
+
 header{
   width: 100%;
   overflow:hidden;
