@@ -15,13 +15,10 @@
       src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
     <script
       src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
-    <script src="js/init.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
- 
-    <script type="module" src="cmp/mi-footer.js"></script>
-    <script type="module" src="cmp/mi-progreso.js"></script>
+
     <link rel="stylesheet" href="css/estilos.css"  >
-   <script src="js/header.js"></script>
+
   </head>
     <body>
        <header>
@@ -38,19 +35,14 @@
       </nav><!-- .nav-menu -->
       </div>
     </header>
-      <section class="contenido wrapper">
-            <h1>Registrate!</h1>
-            <p>
-              <label for="email" >Correo Electronico: </label><br>
-      <input type="email" placeholder="hola@ejemplo.com" id="txtEmail" required>
-            </p>
-            <p>
-              <label for="password"> Contraseña: </label><br>
-      <input type="password" placeholder="Contraseña" id="txtPassword" required>
-            </p>
-            <p><button id="btnSignUp" class="btn btn-secondary" >REGISTRARME</button></p>
-        <h2>No te preocupes, tus datos estan seguros :)</h2>
-    <mi-footer></mi-footer>
+    <div class="container ">
+      <input id="txtEmail"type="email" placeholder="Email">
+      <input id="txtPassword"type="password" placeholder="Contraseña">
+      <button id="btnLogin" class="btn btn-action">Login</button>
+      <button id="btnSignUp" class="btn btn-secondary">Registrarse</button>
+      <button id="btnLogout" class="btn btn-action hide">Logout</button>
+    </div>
+
      </section>
     <script  src="init.js"></script>
     </body>
