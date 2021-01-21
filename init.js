@@ -98,13 +98,13 @@ if(arregloUsuarios[i].Email == id){
       
 
    }
-   /*
+   
 
    db.collection("usuarios").doc(id).delete().then(function() {
     alert("El usuario se elimino correctamente")
 }).catch(function(error) {
     console.error("Error removing document: ", error);
-});*/
+});
 }
 
 function editarUsuario(){
@@ -126,7 +126,7 @@ if(arregloUsuarios[i].Email == id){
    var password= document.getElementById("contraseniaNuevoUsuario").value
    var usuarioAeditar = db.collection("usuarios").doc(id);
 
-// Set the "capital" field of the city 'DC'
+ Set the "capital" field of the city 'DC'
 return usuarioAeditar.update({
     "Nombre": nombre,
     "Contrasenia":password,
@@ -141,4 +141,5 @@ return usuarioAeditar.update({
 });
 
 }
+
 
