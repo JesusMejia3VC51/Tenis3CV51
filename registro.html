@@ -1,39 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SNKRS</title>
-    <meta content="" name="descriptison">
-    <meta content="" name="keywords">
-    <link rel="shortcut icon" type="image/x-icon" href="imagenes/favicon.ico">
-
-    <script
-      src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
-    <script
-      src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
-    <script
-      src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-
-    <link rel="stylesheet" href="css/estilos.css"  >
-
+    <link rel="stylesheet" href="css/estilos.css">
   </head>
-    <body>
-      <script 
-      src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
-      <script >
-       var firebaseConfig = {
-    apiKey: "AIzaSyCRyqyQBbsLDb2x4sCLTe4FF8P5mCBAm7A",
-    authDomain: "tenis3cv51.firebaseapp.com",
-    projectId: "tenis3cv51",
-    storageBucket: "tenis3cv51.appspot.com",
-    messagingSenderId: "366627943996",
-    appId: "1:366627943996:web:5c0e7c69f4e0f5c87ef539"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-      </script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+  <body>
        <header>
       <div class="wrapper"> 
       <div class="logo"><a href="index.html">SKNRS</a></div>
@@ -48,15 +21,27 @@
       </nav><!-- .nav-menu -->
       </div>
     </header>
-    <div class="container ">
-      <input id="txtEmail"type="email" placeholder="Email">
-      <input id="txtPassword"type="password" placeholder="Contraseña">
-      <button id="btnLogin" class="btn btn-action">Login</button>
-      <button id="btnSignUp" class="btn btn-secondary">Registrarse</button>
-      <button id="btnLogout" class="btn btn-action hide">Logout</button>
-    </div>
 
-     </section>
-    <script  src="init.js"></script>
+<label>Nombre</label>
+  <input type="text" name="" id="nombreNuevoUsuario" required>
+  <br>
+  <label>Email</label>
+  <input type="text" name="" id="emailNuevoUsuario">
+  <br>
+  <label>Contraseña</label>
+  <input type="password" name="" id="contraseniaNuevoUsuario">
+<br>
+  <button onclick="agregarDatos()">Subir Informacion</button>
+  <br>
+  <label>ID</label>
+  <input type="text" name="" id="usuarioaEliminar">
+<br>
+  <button onclick="borrarDatosUsuarios()">Eliminar usuario</button>
+  <br>
+  <button onclick="editarUsuario()">Editar usuario</button>
+  <br>
+  <button onclick="leerDatosUsuario()">Leer</button>
+     
     </body>
+    <script  src="init.js"></script>
 </html>
