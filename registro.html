@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>SNKRS</title>
+    <link rel="shortcut icon" type="image/x-icon" href="imagenes/favicon.ico">
     <link rel="stylesheet" href="css/estilos.css">
   </head>
   <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
@@ -21,17 +22,17 @@
       </nav><!-- .nav-menu -->
       </div>
     </header>
-
-<label>Nombre</label>
+<section class="contenido wrapper">
+<label>Nombre:</label>
   <input type="text" name="" id="nombreNuevoUsuario" required>
   <br>
-  <label>Email</label>
+  <label>Email:</label>
   <input type="text" name="" id="emailNuevoUsuario">
   <br>
-  <label>Contraseña</label>
+  <label>Contraseña:</label>
   <input type="password" name="" id="contraseniaNuevoUsuario">
 <br>
-  <button onclick="agregarDatos()">Subir Informacion</button>
+  <button onclick="agregarDatos()">REGISTRARME</button>
   <br>
   <label>ID</label>
   <input type="text" name="" id="usuarioaEliminar">
@@ -41,7 +42,7 @@
   <button onclick="editarUsuario()">Editar usuario</button>
   <br>
   <button onclick="leerDatosUsuario()">Leer</button>
-     
+  </section>
     </body>
     <script  src="init.js"></script>
 </html>
