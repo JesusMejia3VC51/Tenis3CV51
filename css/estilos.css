@@ -117,7 +117,7 @@ header nav a:hover{
 .paginacion ul li a{
   display:block;
   padding:10px 20px;
-  background:#fff;
+  background:#8F71D1;
   text-decoration:none;
 }
 
@@ -126,12 +126,13 @@ header nav a:hover{
 }
 
 .paginacion ul li .active{
-  background:#037E8C;
+  background:#434048;
   font-weight:bold;
 }
 
 .text-center{
   font-size: 18px;
 }
+
 
 
