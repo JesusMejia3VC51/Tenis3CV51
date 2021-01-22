@@ -96,16 +96,13 @@ if(arregloUsuarios[i].Email == id){
   console.log("El id del usuario que quieres eliminar es : " +arregloUsuarios[i].id )
 
 }
-    
-
-  }
-  /*
+  } 
 
   db.collection("usuarios").doc(id).delete().then(function() {
     alert("El usuario se elimino correctamente")
 }).catch(function(error) {
     console.error("Error removing document: ", error);
-});*/
+});
 }
 
 function editarUsuario(){
