@@ -36,13 +36,6 @@ let arregloUsuarios = [];
 docRef.get().then(function(doc) {
     if (doc.exists) {
         console.log("Document data:", doc.data());
-        var usuarioSeleccionado = doc.data();
-        console.log(usuarioSeleccionado.Nombre)
-
-            document.getElementById("emailNuevoUsuario").value =usuarioSeleccionado.Email
-    document.getElementById("nombreNuevoUsuario").value=usuarioSeleccionado.Nombre
-    document.getElementById("contraseniaNuevoUsuario").value=usuarioSeleccionado.Contrasenia
-
     } else {
         // doc.data() will be undefined in this case
         console.log("No such document!");
@@ -50,14 +43,7 @@ docRef.get().then(function(doc) {
 }).catch(function(error) {
     console.log("Error getting document:", error);
 });
-
-
-
-  }
-
-
-
-
+}
 
 
   function agregarDatos(){
@@ -82,10 +68,30 @@ docRef.get().then(function(doc) {
 });
 
     }
-
-    
-
   }
+  function registrarse() {
+     var email = document.getElementById("emailNuevoUsuario").value
+    var nombre = document.getElementById("nombreNuevoUsuario").value
+    var password= document.getElementById("contraseniaNuevoUsuario").value
+      if (email == "" || email == null || password == "" || password == null) {
+        alert("No puedes tener los campos vacios")
+      } else {
+        console.log("Entro a funcion registrarse")
+        console.log("El correo que se va a registrar es:" + email)
+        console.log("El password que se va a registrar es:" + password)
+        firebase.auth().createUserWithEmailAndPassword(email, password).then((user) => {
+          console.log(user)
+          alert("Tu cuenta se ha creada correctamente")
+          window.location.href = "index.html"
+        }).catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          alert(errorMessage)
+          // ..
+        });
+      }
+    }
+
 
 function borrarDatosUsuarios(){
   var id = document.getElementById("usuarioaEliminar").value
@@ -97,23 +103,12 @@ function borrarDatosUsuarios(){
 }
 
 
+
 function editarUsuario(){
-
-
-
   var id = document.getElementById("usuarioaEliminar").value
-
-
-  for(var i = 0 ; i < arregloUsuarios.length;i++){
-if(arregloUsuarios[i].Email == id){
-  console.log("El id del usuario que quieres editar es : " +arregloUsuarios[i].id )
-
-}
-}
-
   var email = document.getElementById("emailNuevoUsuario").value
-    var nombre = document.getElementById("nombreNuevoUsuario").value
-    var password= document.getElementById("contraseniaNuevoUsuario").value
+  var nombre = document.getElementById("nombreNuevoUsuario").value
+  var password= document.getElementById("contraseniaNuevoUsuario").value
   var usuarioAeditar = db.collection("usuarios").doc(id);
 
 // Set the "capital" field of the city 'DC'
