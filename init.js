@@ -12,10 +12,12 @@ console.log("JS")
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  angular.module('modulo', ['firebase']).controller('controlador', function($scope, $firebaseObject, $firebaseArray, $filter) {
 
   var db = firebase.firestore();
 
-let arregloUsuarios = [];
+  let arregloUsuarios = [];
 
   db.collection("usuarios").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
@@ -51,15 +53,26 @@ docRef.get().then(function(doc) {
     console.log("Error getting document:", error);
 });
 
-
-
   }
-
-
-
-
-
-
+   function registrarse() {
+      if (email == "" || email == null || password == "" || password == null) {
+        alert("No puedes tener los campos vacios")
+      } else {
+        console.log("Entro a funcion registrarse")
+        console.log("El correo que se va a registrar es:" + email)
+        console.log("El password que se va a registrar es:" + password)
+        firebase.auth().createUserWithEmailAndPassword(email, password).then((user) => {
+          console.log(user)
+          alert("Tu cuenta se ha creada correctamente")
+          window.location.href = "registro.html"
+        }).catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          alert(errorMessage)
+          // ..
+        });
+      }
+    }
   function agregarDatos(){
     var email = document.getElementById("emailNuevoUsuario").value
     var nombre = document.getElementById("nombreNuevoUsuario").value
@@ -82,12 +95,10 @@ docRef.get().then(function(doc) {
 });
 
     }
-
-    
-
   }
 
-function borrarDatosUsuarios(doc){
+
+function borrarDatosUsuarios(){
   console.log("Se ejecuto la funcion eliminar datos")
   var id = document.getElementById("usuarioaEliminar").value
 
@@ -105,13 +116,10 @@ if(arregloUsuarios[i].Email == id){
 });
 }
 
+
+
 function editarUsuario(){
-
-
-
   var id = document.getElementById("usuarioaEliminar").value
-
-
   for(var i = 0 ; i < arregloUsuarios.length;i++){
 if(arregloUsuarios[i].Email == id){
   console.log("El id del usuario que quieres editar es : " +arregloUsuarios[i].id )
@@ -139,3 +147,5 @@ return usuarioAeditar.update({
 });
 
 }
+}); 
+
