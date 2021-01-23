@@ -83,9 +83,26 @@ docRef.get().then(function(doc) {
 
     }
 
-    
-
   }
+  function registrarse () {
+      if (email == "" || email == null || password == "" || password == null) {
+        alert("No puedes tener los campos vacios")
+      } else {
+        console.log("Entro a funcion registrarse")
+        console.log("El correo que se va a registrar es:" + email)
+        console.log("El password que se va a registrar es:" + password)
+        firebase.auth().createUserWithEmailAndPassword(email, password).then((user) => {
+          console.log(user)
+          alert("Tu cuenta se ha creada correctamente")
+          window.location.href = "registro.html"
+        }).catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          alert(errorMessage)
+          // ..
+        });
+      }
+    }
 
 function borrarDatosUsuarios(){
   console.log("Se ejecuto la funcion eliminar datos")
