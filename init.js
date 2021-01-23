@@ -12,7 +12,7 @@ console.log("JS")
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  
+
   var db = firebase.firestore();
 
 let arregloUsuarios = [];
@@ -83,47 +83,19 @@ docRef.get().then(function(doc) {
 
     }
 
-  }
-  function registrarse () {
-      if (email == "" || email == null || password == "" || password == null) {
-        alert("No puedes tener los campos vacios")
-      } else {
-        console.log("Entro a funcion registrarse")
-        console.log("El correo que se va a registrar es:" + email)
-        console.log("El password que se va a registrar es:" + password)
-        firebase.auth().createUserWithEmailAndPassword(email, password).then((user) => {
-          console.log(user)
-          alert("Tu cuenta se ha creada correctamente")
-          window.location.href = "registro.html"
-        }).catch((error) => {
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          alert(errorMessage)
-          // ..
-        });
-      }
-    }
-
-function borrarDatosUsuarios(){
-  console.log("Se ejecuto la funcion eliminar datos")
-  var id = document.getElementById("usuarioaEliminar").value
-
-  for(var i = 0 ; i < arregloUsuarios.length;i++){
-if(arregloUsuarios[i].Email == id){
-  console.log("El id del usuario que quieres eliminar es : " +arregloUsuarios[i].id )
-
-}
     
 
   }
-  /*
 
+function borrarDatosUsuarios(){
+  var id = document.getElementById("usuarioaEliminar").value
   db.collection("usuarios").doc(id).delete().then(function() {
     alert("El usuario se elimino correctamente")
 }).catch(function(error) {
     console.error("Error removing document: ", error);
-});*/
+});
 }
+
 
 function editarUsuario(){
 
@@ -159,5 +131,3 @@ return usuarioAeditar.update({
 });
 
 }
-
-
