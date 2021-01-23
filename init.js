@@ -87,7 +87,7 @@ docRef.get().then(function(doc) {
 
   }
 
-function borrarDatosUsuarios(id){
+function borrarDatosUsuarios(doc){
   console.log("Se ejecuto la funcion eliminar datos")
   var id = document.getElementById("usuarioaEliminar").value
 
