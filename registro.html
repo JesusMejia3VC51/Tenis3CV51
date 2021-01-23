@@ -8,7 +8,7 @@
   </head>
   <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
-  <body  ng-app="modulo" ng-controller="controlador">
+  <body>
        <header>
       <div class="wrapper"> 
       <div class="logo"><a href="index.html">SKNRS</a></div>
@@ -33,7 +33,6 @@
   <label>Contraseña:</label>
   <input type="password" name="" id="contraseniaNuevoUsuario">
   <br><br>
-  <button type="submit" ng-click="registrarse();" class="btn btn-primary">Registrarme</button>
   <button onclick="agregarDatos()">REGISTRARME</button>
   <br><br>
   <label>ID</label>
@@ -44,8 +43,8 @@
   <button onclick="editarUsuario()">Editar usuario</button>
   <br><br>
   <button onclick="leerDatosUsuario()">Leer</button>
-  <mi-footer></mi-footer>
   </section>
+  <mi-footer></mi-footer>
     </body>
     <script  src="init.js"></script>
 </html>
