@@ -106,14 +106,19 @@ docRef.get().then(function(doc) {
 }
 
    function cerrarSesion() {
+    if (email == "" || email == null || password == "" || password == null) {
+        alert("Llena los campos por favor")
+      } else {
       firebase.auth().signOut().then(function() {
         email = false;
+        password = false;
         alert("Cerraste sesion Correctamente")
         window.location.href = "index.html"
       }).catch(function(error) {
         alert(error)
       });
     }
+  }
 
 
 function borrarDatosUsuarios(){
@@ -126,25 +131,4 @@ function borrarDatosUsuarios(){
 }
 
 
-function editarUsuario(){
-  var id = document.getElementById("usuarioaEliminar").value
-  var email = document.getElementById("emailNuevoUsuario").value
-  var nombre = document.getElementById("nombreNuevoUsuario").value
-  var password= document.getElementById("contraseniaNuevoUsuario").value
-  var usuarioAeditar = db.collection("usuarios").doc(id);
 
-// Set the "capital" field of the city 'DC'
-return usuarioAeditar.update({
-    "Nombre": nombre,
-    "Contrasenia":password,
-    "Email":email
-})
-.then(function() {
-    console.log("Document successfully updated!");
-})
-.catch(function(error) {
-    // The document probably doesn't exist.
-    console.error("Error updating document: ", error);
-});
-
-}
