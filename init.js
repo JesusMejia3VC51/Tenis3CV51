@@ -12,11 +12,9 @@ console.log("JS")
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-
   var db = firebase.firestore();
 
-let arregloUsuarios = [];
-
+ let arregloUsuarios = [];
   db.collection("usuarios").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
 
@@ -51,8 +49,8 @@ docRef.get().then(function(doc) {
     var nombre = document.getElementById("nombreNuevoUsuario").value
     var password= document.getElementById("contraseniaNuevoUsuario").value
 
-    if(email == "" || email == null){
-      alert("El email no puede estar vacio")
+    if (email == "" || email == null || password == "" || password == null) {
+      alert("Llena los campos por favor")
     }else{
         db.collection("usuarios").add({
 
@@ -70,18 +68,17 @@ docRef.get().then(function(doc) {
     }
   }
   function registrarse() {
-     var email = document.getElementById("emailNuevoUsuario").value
-    var nombre = document.getElementById("nombreNuevoUsuario").value
+    var email = document.getElementById("emailNuevoUsuario").value
     var password= document.getElementById("contraseniaNuevoUsuario").value
       if (email == "" || email == null || password == "" || password == null) {
-        alert("No puedes tener los campos vacios")
+        alert("Llena los campos por favor")
       } else {
         console.log("Entro a funcion registrarse")
         console.log("El correo que se va a registrar es:" + email)
         console.log("El password que se va a registrar es:" + password)
         firebase.auth().createUserWithEmailAndPassword(email, password).then((user) => {
           console.log(user)
-          alert("Tu cuenta se ha creada correctamente")
+          alert("Tu cuenta se creo correctamente")
           window.location.href = "index.html"
         }).catch((error) => {
           var errorCode = error.code;
@@ -96,12 +93,11 @@ docRef.get().then(function(doc) {
 function borrarDatosUsuarios(){
   var id = document.getElementById("usuarioaEliminar").value
   db.collection("usuarios").doc(id).delete().then(function() {
-    alert("El usuario se elimino correctamente")
+    alert("Tu usuario se elimino correctamente")
 }).catch(function(error) {
     console.error("Error removing document: ", error);
 });
 }
-
 
 
 function editarUsuario(){
