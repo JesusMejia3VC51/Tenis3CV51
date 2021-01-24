@@ -106,6 +106,8 @@ docRef.get().then(function(doc) {
 }
 
    function cerrarSesion() {
+    var email = document.getElementById("emailSesion").value
+    var password= document.getElementById("contraseniaSesion").value
     if (email == "" || email == null || password == "" || password == null) {
         alert("Llena los campos por favor")
       } else {
@@ -129,6 +131,3 @@ function borrarDatosUsuarios(){
     console.error("Error removing document: ", error);
 });
 }
-
-
-
