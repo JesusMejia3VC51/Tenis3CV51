@@ -88,6 +88,32 @@ docRef.get().then(function(doc) {
         });
       }
     }
+ function iniciarSesion () {
+    var email = document.getElementById("emailSesion").value
+    var password= document.getElementById("contraseniaSesion").value
+      if (email == "" || email == null || password == "" || password == null) {
+        alert("Llena los campos por favor")
+      } else {
+      firebase.auth().signInWithEmailAndPassword(email, password).then((user) => {
+        alert("inicio de sesion exitoso")
+        window.location.href = "index.html"
+      }).catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        alert(errorMessage)
+      });
+    }
+}
+
+   function cerrarSesion() {
+      firebase.auth().signOut().then(function() {
+        email = false;
+        alert("Cerraste sesion Correctamente")
+        window.location.href = "index.html"
+      }).catch(function(error) {
+        alert(error)
+      });
+    }
 
 
 function borrarDatosUsuarios(){
