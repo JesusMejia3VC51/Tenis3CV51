@@ -106,11 +106,6 @@ docRef.get().then(function(doc) {
 }
 
    function cerrarSesion() {
-    var email = document.getElementById("emailSesion").value
-    var password= document.getElementById("contraseniaSesion").value
-    if (email == "" || email == null || password == "" || password == null) {
-        alert("Llena los campos por favor")
-      } else {
       firebase.auth().signOut().then(function() {
         email = false;
         password = false;
@@ -120,7 +115,7 @@ docRef.get().then(function(doc) {
         alert(error)
       });
     }
-  }
+  
 
 
 function borrarDatosUsuarios(){
@@ -131,3 +126,6 @@ function borrarDatosUsuarios(){
     console.error("Error removing document: ", error);
 });
 }
+
+
+
