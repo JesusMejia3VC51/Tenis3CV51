@@ -10,6 +10,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
   <body>
        <header>
       <div class="wrapper"> 
@@ -19,7 +20,7 @@
           <a href="index.html" class="active">Inicio</a>
           <a href="nuevo.html" class="active">Lo Nuevo</a>
           <a href="ropa.html">Streetwear</a>
-          <a href="#about">Conocenos</a>
+          <a href="#conocenos">Conocenos</a>
           <a href="iniciarSe.html">Inicia Sesion</a>
           <a href="registro.html">¡Registrate!</a>
       </nav><!-- .nav-menu -->
@@ -37,7 +38,7 @@
   <label>Contraseña:</label>
   <input type="password" name="" id="contraseniaNuevoUsuario">
   <br><br>
-  <button onclick="registrarse()">REGISTRARME</button>
+  <button onclick="agregarDatos(), registrarse()">REGISTRARME</button>
   <br><br>
   <mi-footer></mi-footer>
   </section>
